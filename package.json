@@ -1,6 +1,6 @@
 {
   "name": "todolist",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": "https://github.com/mcauto/todolist-android.git",
   "author": "Mincheol Kim <mcauto@naver.com>",
   "scripts": {
