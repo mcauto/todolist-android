@@ -1,8 +1,5 @@
-name: Android CI
-on:
- push:
-  branches:
-   - master
+name: Build android
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
