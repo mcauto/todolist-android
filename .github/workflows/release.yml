@@ -36,6 +36,8 @@ jobs:
           export VERSION=$(npm run next-version | tail -1)
           sed -i "s/versionCode = .*/versionCode = ${GITHUB_RUN_NUMBER}/g" app/build.gradle.kts
           sed -i "s/versionName = .*/versionName = \"${VERSION}\"/g" app/build.gradle.kts
+          git add app/build.gradle.kts
+          git commit --no-verify -m "chore: update version code, name"
           yarn release
           git push --follow-tags origin master
       - name: Push changes
