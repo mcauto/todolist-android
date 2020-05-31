@@ -1,0 +1,37 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "repository": "https://github.com/mcauto/todolist-android.git",
+  "author": "Mincheol Kim <mcauto@naver.com>",
+  "scripts": {
+    "build": "./gradlew build",
+    "lint": "./gradlew ktlint",
+    "test": "./gradlew test",
+    "release": "standard-version",
+    "version": "echo $npm_package_version",
+    "next-version": "node ./get-next-version.js"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "husky": "^4.2.5",
+    "standard-version": "^7.1.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "skipCI": false,
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn lint && yarn test && yarn build",
+      "pre-push": "yarn lint"
+    }
+  },
+  "dependencies": {
+    "yarn": "^1.22.4"
+  },
+  "license": "MIT"
+}
