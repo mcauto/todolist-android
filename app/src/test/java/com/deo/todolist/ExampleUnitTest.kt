@@ -1,4 +1,4 @@
-package com.deo.todolist_mvvm
+package com.deo.todolist
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
