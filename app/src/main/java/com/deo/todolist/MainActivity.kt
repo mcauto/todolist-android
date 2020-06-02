@@ -1,4 +1,4 @@
-package com.deo.todolist_mvvm
+package com.deo.todolist
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
