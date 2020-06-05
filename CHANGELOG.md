@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/mcauto/todolist-android/compare/v1.2.0...v1.3.0) (2020-06-05)
+
+
+### Features
+
+* **app:** use repository with coroutine ([d05b789](https://github.com/mcauto/todolist-android/commit/d05b789ec388a2ae1a2ba74586482cfbf6f436eb))
+* **repository:** add module ([40c0b11](https://github.com/mcauto/todolist-android/commit/40c0b1174d9cafa06178b0d65f21e05d1a09f585))
+
+
+### Bug Fixes
+
+* **gradle:** fix no class def found error ([1629938](https://github.com/mcauto/todolist-android/commit/1629938029413093a1a0c1b2813588c98a85e974))
+
 ## [1.2.0](https://github.com/mcauto/todolist-android/compare/v1.1.0...v1.2.0) (2020-06-02)
 
 
