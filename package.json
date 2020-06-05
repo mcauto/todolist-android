@@ -1,10 +1,10 @@
 {
   "name": "todolist",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "repository": "https://github.com/mcauto/todolist-android.git",
   "author": "Mincheol Kim <mcauto@naver.com>",
   "scripts": {
-    "build": "./gradlew build",
+    "build": "./gradlew clean build",
     "lint": "./gradlew ktlint detekt",
     "test": "./gradlew test",
     "release": "standard-version",

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/mcauto/todolist-android/compare/v1.1.0...v1.2.0) (2020-06-02)
+
+
+### Features
+
+* **leak-canary:** add memory leak detection ([#7](https://github.com/mcauto/todolist-android/issues/7)) ([37a85ab](https://github.com/mcauto/todolist-android/commit/37a85ab176e407c2076adfdc08a3f28389b0182b))
+
 ## [1.1.0](https://github.com/mcauto/todolist-android/compare/v1.0.2...v1.1.0) (2020-06-02)
 
 
