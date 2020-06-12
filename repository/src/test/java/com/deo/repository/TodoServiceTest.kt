@@ -3,43 +3,48 @@ package com.deo.repository
 import com.deo.repository.api.AuthService
 import com.deo.repository.api.Todo
 import com.deo.repository.api.TodoService
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import com.deo.repository.api.TodoUsecase
+import com.deo.repository.api.TokenSecurityScope
+import io.mockk.MockKAnnotations
+import io.mockk.every
+import io.mockk.impl.annotations.MockK
+import kotlinx.coroutines.runBlocking
+import org.junit.Before
 import org.junit.Test
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class TodoServiceTest {
     // https://github.com/mcauto/todo-list-fastapi
-    private val host: String = "http://localhost:5000/"
+    // (android) http://10.0.2.2:5000/
+    // (native) http://localhost:5000/
+//    private val host: String = "http://localhost:5000/"
 
-    // apply dependency injection by dagger (retrofit, services)
-    private val retrofit: Retrofit = Retrofit.Builder()
-        .baseUrl(host)
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-    private val todoService: TodoService = retrofit.create(TodoService::class.java)
-    private val authService: AuthService = retrofit.create(AuthService::class.java)
+    @MockK
+    lateinit var authService: AuthService
 
-    private lateinit var todoItems: List<Todo>
+    @MockK
+    lateinit var todoService: TodoService
+
+    @Before
+    fun setUp() = MockKAnnotations.init(this)
 
     @Test
-    fun getAll() {
-        GlobalScope.launch {
-            // authentication header
-            try {
-                todoItems = todoService.getAll(
-                    auth = "Bearer ${authService.getToken(
-                        username = "tester",
-                        password = "imdeo",
-                        scope = "TODOS/GET"
-                    ).accessToken}"
+    fun getTodoItems() {
+        var todoItems: List<Todo> = listOf()
+        val username = "tester"
+        val password = "imdeo"
+        val usecase = TodoUsecase(authService, todoService)
+        val scopes: List<TokenSecurityScope> =
+            listOf(TokenSecurityScope.FETCH, TokenSecurityScope.CREATE)
+        every {
+            runBlocking {
+                todoItems = usecase.getTodoItems(
+                    username = username,
+                    password = password,
+                    scopes = scopes
                 )
-                print(todoItems)
-            } catch (exception: retrofit2.HttpException) {
-                print(exception.message())
             }
+        } answers {
+            print(todoItems)
         }
-//        sleep(10000L)
     }
 }
