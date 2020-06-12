@@ -46,6 +46,7 @@ android {
 }
 
 dependencies {
+
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(project(":repository"))
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72")
@@ -53,7 +54,14 @@ dependencies {
     implementation("androidx.core:core-ktx:1.3.0")
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
 
-    //MultiDex
+    // LiveData
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0-alpha04")
+
+    // viewModels()
+    implementation("androidx.fragment:fragment-ktx:1.2.5")
+
+    // MultiDex
     implementation("androidx.multidex:multidex:2.0.1")
 
     // Test
@@ -64,15 +72,7 @@ dependencies {
     debugImplementation("com.squareup.leakcanary:leakcanary-android:2.3")
 
     // Coroutine
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.2")
-
-
-    // Retrofit - HTTP client
-    implementation("com.squareup.retrofit2:retrofit:2.8.1")
-
-    // Gson - serializer
-    implementation("com.google.code.gson:gson:2.8.5")
-    implementation("com.squareup.retrofit2:converter-gson:2.7.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.5")
 }
 
 /** Fix: androidx 생기면서 생긴 호환성 문제
