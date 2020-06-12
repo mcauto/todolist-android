@@ -40,12 +40,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         viewModel.todoItems.observe(this, Observer { textView.text = it.toString() })
-
         button.setOnClickListener {
             viewModel.fetchTodoItems(
                 todoUsecase = todoAPI.todoUsecase,
-                username = "tester",
-                password = "imdeo",
+                username = username.text.toString(),
+                password = password.text.toString(),
                 scopes = listOf(TokenSecurityScope.FETCH)
             )
             textView.text = "불러오는 중"
