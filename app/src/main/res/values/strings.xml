@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Todolist-mvvm</string>
+    <string name="check">check</string>
 </resources>

@@ -13,6 +13,7 @@ detekt {
 
 apply(from = "../ktlint.gradle.kts")
 
+
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72")
