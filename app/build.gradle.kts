@@ -84,7 +84,7 @@ dependencies {
 configurations.all {
     resolutionStrategy.eachDependency {
         val requested = this.requested
-        if (requested.group == "androidx.appcompat") {
+        if (requested.group == "androidx") {
             if (!requested.name.startsWith("multidex")) {
                 this.useVersion("1.+")
             }

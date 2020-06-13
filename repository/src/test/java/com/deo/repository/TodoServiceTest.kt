@@ -11,12 +11,13 @@ import io.mockk.impl.annotations.MockK
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
+import kotlin.random.Random
 
 class TodoServiceTest {
-    // https://github.com/mcauto/todo-list-fastapi
-    // (android) http://10.0.2.2:5000/
-    // (native) http://localhost:5000/
-//    private val host: String = "http://localhost:5000/"
+//     https://github.com/mcauto/todo-list-fastapi
+//     (android) http://10.0.2.2:5000/
+//     (native) http://localhost:5000/
+//     private val host: String = "http://localhost:5000/"
 
     @MockK
     lateinit var authService: AuthService
@@ -31,7 +32,7 @@ class TodoServiceTest {
     fun getTodoItems() {
         var todoItems: List<Todo> = listOf()
         val username = "tester"
-        val password = "imdeo"
+        val password = "${List(10) { Random.nextInt(0, 100) }}"
         val usecase = TodoUsecase(authService, todoService)
         val scopes: List<TokenSecurityScope> =
             listOf(TokenSecurityScope.FETCH, TokenSecurityScope.CREATE)

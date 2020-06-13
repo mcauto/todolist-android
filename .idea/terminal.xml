@@ -3,7 +3,7 @@
   <component name="TerminalProjectOptionsProvider">
     <envs>
       <env key="PATH" value="C:\Users\mcaut\AppData\Local\Yarn\bin;C:\Users\mcaut\AppData\Roaming\npm;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;" />
-      <env key="JAVA_HOME" value="C:\Program Files\openjdk\java-se-8u41-ri" />
+      <env key="JAVA_HOME" value="C:\Program Files\openjdk\jdk-11" />
     </envs>
   </component>
 </project>
