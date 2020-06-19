@@ -1,4 +1,6 @@
 # Todolist-android
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmcauto%2Ftodolist-android.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmcauto%2Ftodolist-android?ref=badge_shield)
+
 
 ## Code Quality
 
@@ -25,3 +27,7 @@
 
 
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmcauto%2Ftodolist-android.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmcauto%2Ftodolist-android?ref=badge_large)
